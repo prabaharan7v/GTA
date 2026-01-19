@@ -4,14 +4,14 @@ on : push
 jobs:
 
  1stjob:
-  run-on: ubuntu-latest
+  runs-on: ubuntu-latest
   steps: 
    - name: steps1
      run: echo "Hello world and steps1 output"
   
 
  2njob:
-  run-on: ubuntu-latest
+  runs-on: ubuntu-latest
   steps: 
    - name: 2ndjobsteps1
      run: |
