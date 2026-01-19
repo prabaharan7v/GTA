@@ -8,5 +8,14 @@ jobs:
   steps: 
    - name: steps1
      run: echo "Hello world and steps1 output"
+  
 
+ 2njob:
+  run-on: ubuntu-latest
+  steps: 
+   - name: 2ndjobsteps1
+     run: |
+      echo "this is second job output with error code 1 so it shows as fail"
+      exit 1
+  
 
