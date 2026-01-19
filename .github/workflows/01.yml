@@ -1,0 +1,12 @@
+name: 01-building-blocks
+on : push
+
+jobs:
+
+ 1stjob:
+  run-on: ubuntu-latest
+  steps: 
+   - name: steps1
+     run: echo "Hello world and steps1 output"
+
+
