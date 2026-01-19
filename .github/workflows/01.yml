@@ -16,7 +16,7 @@ jobs:
    - name: job2steps1
      run: |
       echo "this is second job output with error code 1 so it shows as fail"
-      exit 1
+      exit 0
    - name: job2steps2
      run: |
       echo "testing"
