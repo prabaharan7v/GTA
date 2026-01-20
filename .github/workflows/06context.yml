@@ -20,6 +20,6 @@ jobs:
 
        - name: 'step2'
          run: |
-           echo 'variable value ${{vars.myvar}}'
+           echo 'variable value ${{vars.MYVAR}}'
 
 
