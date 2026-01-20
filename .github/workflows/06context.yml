@@ -1,0 +1,25 @@
+name: 06-contextpipepline
+
+on: 
+    push:
+    wokflow_dispatcher:
+
+jobs:
+    job1:
+     runs-on: ubuntu-latest   
+     steps:
+        -name: 'task1'
+         run: |
+          echo "this is the event hub event ${{gitub.event_name}}"
+          echo 'this is ref ${{gitub.ref}}'
+          echo 'this is sha ${{github.sha}}'
+          echo 'this is github actor ${{github.actor}}'
+          echo 'this is github workflow ${{github.workflow}}'
+          echo 'run id ${{github.run_id}}'
+          echo 'run number ${{github.run_number}}'
+
+        -name: 'step2'
+         run: |
+           echo 'variable value ${{vars.myvar}}'
+
+
