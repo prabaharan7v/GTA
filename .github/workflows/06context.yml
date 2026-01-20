@@ -8,7 +8,7 @@ jobs:
     job1:
      runs-on: ubuntu-latest   
      steps:
-        -name: 'task1'
+       - name: 'task1'
          run: |
           echo "this is the event hub event ${{gitub.event_name}}"
           echo 'this is ref ${{gitub.ref}}'
@@ -18,7 +18,7 @@ jobs:
           echo 'run id ${{github.run_id}}'
           echo 'run number ${{github.run_number}}'
 
-        -name: 'step2'
+       - name: 'step2'
          run: |
            echo 'variable value ${{vars.myvar}}'
 
