@@ -1,0 +1,26 @@
+name: 02-pipeline2
+on : workflow_dispatch
+
+jobs:
+
+ job1:
+  runs-on: ubuntu-latest
+  steps: 
+   - name: job1 step1
+     run: echo "Hello world and steps1 output "
+  
+
+ job2:
+  runs-on: ubuntu-latest
+  steps: 
+   - name: job2 steps1
+     run: |
+      echo "this is second job output with error code 1 so it shows as fail but now it cahnged 0 so it will success"
+      exit 0
+   - name: job2 steps2
+     run: |
+      echo "this is final step as a part job 2 so we pipeline completed successfull"
+
+      
+      
+
