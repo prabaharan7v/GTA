@@ -17,6 +17,7 @@ on:
                     - v1
                     - v2
                     - v3   
+                    - v4
                 default : v4
                 description: please enter the environment you want to run 
 
@@ -25,11 +26,18 @@ jobs:
 
  job1:
   runs-on : ubuntu-latest
+  outputs: 
+    outpu1: ${{steps.fstout.outputs.prabaoutput}}
   steps:
     - name: first task
+      id : fstout
+
       run: |
       
        echo "building from tag ${{inputs.tag}}"
+       echo 'prabaoutput=hellomanhowareayou' >> "$GITHUB_OUTPUT"
+    
+
 
 
  build:
@@ -40,6 +48,7 @@ jobs:
       run: |
       
        echo "building from tag ${{inputs.tag}}"
+       echo 'this is outut value ${{needs.job1.outputs}}'
 
  deploy:
    runs-on : ubuntu-latest
