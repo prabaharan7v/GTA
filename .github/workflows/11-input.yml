@@ -48,14 +48,16 @@ jobs:
       run: |
       
        echo "building from tag ${{inputs.tag}}"
-       echo 'this is outut value ${{needs.job1.outputs}}'
+       echo 'this is outut value ${{needs.job1.outputs.outpu1}}'
 
  deploy:
    runs-on : ubuntu-latest
-   needs: build
+   needs: 
+    - build
+    - job1
    if: ${{!inputs.dry-run}}
    steps:
     - name: first task
       run: |
-      
        echo "building from tag ${{inputs.target}}"
+       echo 'this is outut value ${{needs.job1.outputs.outpu1}}'
